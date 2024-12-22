@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   build:
@@ -30,13 +29,6 @@ jobs:
         working-directory: ./client
         run: npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    name: Deploy to Cloudflare Pages
-    steps:
       - name: Publish
         uses: cloudflare/pages-action@v1
         with:
