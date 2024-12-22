@@ -34,8 +34,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args:
-            -Dsonar.projectKey=testpro_test-cicd
-            -Dsonar.organization=testpro
+            -Dsonar.projectKey=amankrs21_test-cicd
+            -Dsonar.organization=amankrs21
           projectBaseDir: .
 
   # 2. Express App Hosting Job (depends on SonarCloud success, but only runs on push to `main`)
