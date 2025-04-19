@@ -1,4 +1,4 @@
-name: CI/CD Pipeline Helper
+name: Full CI/CD Pipeline for SonarCloud, Azure Web App, and Cloudflare Pages
 
 on:
   push:
@@ -70,11 +70,6 @@ jobs:
   deploy-to-azure:
     runs-on: ubuntu-latest
     needs: express-deployment
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write
     if: github.ref == 'refs/heads/main' # Only run on push to `main` branch
 
     steps:
